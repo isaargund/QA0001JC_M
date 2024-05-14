@@ -9,25 +9,23 @@ public class ArraysContinue {
         age [3]=27;
         age [4]=36;
 
-        int young=0;
-        int old =0;
+        int youngest = age[0];
+        int oldest = age[0];
 
-        for (int i = 0; i < age.length; i++) {
-
-            for (int j = 0; j < age.length;j++) {
-                if (age[i]<age[j]) {
-                    young=age[i];
-                }
-
-                if (age[i]>age[j]) {
-                    old=age[i];
-                }
+        for (int i = 1; i < age.length; i++) {
+            if (age[i] < youngest) {
+                youngest = age[i];
+            }
+            if (age[i] > oldest) {
+                oldest = age[i];
             }
         }
-        System.out.println(old+young);
-        System.out.println(old);
-        System.out.println(young);
+
+        System.out.println("En genç yaş: " + youngest);
+        System.out.println("En yaşlı yaş: " + oldest);
+        System.out.println("Yaşların toplamı: " + (youngest + oldest));
+            }
+        }
 
 
-    }
-}
+
