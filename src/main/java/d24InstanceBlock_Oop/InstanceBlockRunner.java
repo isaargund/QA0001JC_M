@@ -6,6 +6,5 @@ public class InstanceBlockRunner {
         InstanceBlock02 obj2=new InstanceBlock02(2025);
         InstanceBlock02 obj3=new InstanceBlock02("White","Benzin");
         //just for git written
-
     }
 }
