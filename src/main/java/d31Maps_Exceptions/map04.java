@@ -1,10 +1,11 @@
 package d31Maps_Exceptions;
 
-import java.util.HashMap;
-import java.util.Hashtable;
+import java.util.*;
 
 public class map04 {
     public static void main(String[] args) {
+
+
 
         /*  Let 's examine the concepts of Thread Safe, Multi Thread, and Synchronized.
 
@@ -43,26 +44,76 @@ public class map04 {
         */
 
 
-        HashMap<String , Integer> stdAges = new HashMap<>();
+        HashMap<String, Integer> stdAges = new HashMap<>();
 
-        stdAges.put("Ismail" , 25);
-        stdAges.put("Tanya" , 28);
-        stdAges.put("Mikail" , 34);
-        stdAges.put("Derya" , 33);
-        stdAges.put("Goksen" , 45);
-        stdAges.put(null , 28);
+        stdAges.put("Ismail", 25);
+        stdAges.put("Tanya", 28);
+        stdAges.put("Mikail", 34);
+        stdAges.put("Derya", 33);
+        stdAges.put("Goksen", 45);
+        stdAges.put(null, 28);
 
 
+        Hashtable<String, Integer> stdAges1 = new Hashtable<>();
 
-        Hashtable<String , Integer> stdAges1 = new Hashtable<>();
-
-        stdAges1.put("Ismail" , 25);
-        stdAges1.put("Tanya" , 28);
-        stdAges1.put("Mikail" , 34);
-        stdAges1.put("Derya" , 33);
-        stdAges1.put("Goksen" , 45);
-        stdAges1.put(null , 28);
+        stdAges1.put("Ismail", 25);
+        stdAges1.put("Tanya", 28);
+        stdAges1.put("Mikail", 34);
+        stdAges1.put("Derya", 33);
+        stdAges1.put("Goksen", 45);
+//        stdAges1.put(null , 28);
 
         System.out.println("stdAges1 = " + stdAges1);
+
+
+        //Tree Map
+        //Tree map keeps data in natural order, so they are so slow....
+        //they are not thread safe and synchronized.
+        //Dont allow null in key part, but follow null in value part....
+        //they order entries considering keys....
+
+        TreeMap<String, Integer> cityPlates = new TreeMap<>();
+        cityPlates.put("Istanbul", 34);
+        cityPlates.put("Berlin", 20);
+        cityPlates.put("Tx", 33);
+        cityPlates.put("Adana", 01);
+//        cityPlates.put(null, 555); in key part null is not accepted.....
+        cityPlates.put("Izmir", null);
+        cityPlates.put("Moscow", null);
+
+        System.out.println(cityPlates); //{Adana=1, Berlin=20, Istanbul=34, Izmir=null, Moscow=null, Tx=33}
+
+
+        //LinkedHasMap
+        //it keeps the entries with insertion order and keeps the order all the time.....
+
+        LinkedHashMap<String, Integer> lhm = new LinkedHashMap<>();
+
+        lhm.put("goksen", 20);
+        lhm.put("Mikail", 33);
+        lhm.put("Inga", 25);
+        lhm.put(null, null);
+
+        System.out.println(lhm); //{goksen=20, Mikail=33, Inga=25}
+
+        // Set<   Map.Entry<String, Integer>    > mapInSet = lhm.entrySet();
+
+
+        for (Map.Entry<String, Integer> entry : lhm.entrySet()) {
+
+            //System.out.println(entry);
+
+            String key = entry.getKey(); //fetch key of the entry from Set including map entries
+            Integer value = entry.getValue(); //fetch value of the entry from Set including map entries
+
+            System.out.println(key + " --> " + value);
+            /*
+            Goksen --> 20
+            Derya --> 62
+            Masuma --> 44
+             */
+
+
+        }
     }
 }
