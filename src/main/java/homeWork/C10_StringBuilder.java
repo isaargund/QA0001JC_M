@@ -1,4 +1,4 @@
-package d30JavaPractice;
+package homeWork;
 
 public class C10_StringBuilder {
 
@@ -12,6 +12,25 @@ public class C10_StringBuilder {
     - Reverse the data again.
     - Append the string "Java " to the data.
 */
+    public static void main(String[] args) {
+        StringBuilder strbl=new StringBuilder(7);
+        System.out.println("capacity : "+strbl.capacity()+" length : "+strbl.length());//capacity : 7 length : 0
+        strbl.append("hava güzel");
+        System.out.println("strbl = " + strbl);//strbl = hava güzel
+       int indx= strbl.indexOf(" ");
+       strbl.deleteCharAt(indx);
+        System.out.println("strbl = " + strbl);
+        strbl.reverse();
+        System.out.println(strbl);
+        strbl.delete(strbl.length()-4, strbl.length());
+        System.out.println(strbl);
+        strbl.append("java");
+        System.out.println(strbl);
+        strbl.insert(0,"baba ");
+        System.out.println(strbl);
+       // strbl
+
+    }
 
 
 }
