@@ -1,30 +1,34 @@
 package d32Exceptions;
 
-public class Exceptions03 {
-    public static void main(String[] args) {
+public class Exceptions03 {   public static void main(String[] args) {
 
-        //NumberFormatException: When we are not able to convert a string to integer, this exception is thrown...
+    //StringIndexOutOfBoundException; when a non existing index is tried to be reached out,
+    //this exception is thrown.........
 
-        String s = "12345we";
-        convertStringToInt(s);
+    String str = "Java";
 
+    pickChars(str, 2);
+    pickChars(str, 5);
 
-    }// closed main method here.....
-
-
-    public static void convertStringToInt(String s){
+}//closing main method...
 
 
-        try{
+    public static void pickChars(String str, int idx) {
 
-            int intStr = Integer.valueOf(s);
-            System.out.println(intStr);
-            System.out.println(intStr+1);
-        }catch (NumberFormatException nfe){
+        try {
+            char ch = str.charAt(idx);
+            System.out.println(ch);
+        } catch (Exception e) {
+            System.out.println("Index numbers should be in bound of the string");
+            System.err.println("Dont use an index number out ouf bound " + e.getMessage() );
+            e.printStackTrace(); //When a developer wants to see details about the error or exception. They uses also this method....
 
-            System.out.println("Convertion must be performed with digit characters!!! " + nfe.getMessage());
         }
-    }
+
+        //for macOs ==> cmd+opt+T ==> Populates surround with ; then select try-catch.....
+        //for windows ==> ctrl+alt+T ==> Populates surround with ; then select try-catch.....
+
+        // go to menu; click "code" and then click on "the surround with" then you will see the try catch blocks shortly......
 
     }
-
+}

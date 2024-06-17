@@ -4,7 +4,8 @@ public class Exceptions01 {
     public static void main(String[] args) {
 
 
-              /*Exception: Errors that disrupt the flow of code execution when the code is run. It means "unexpected problems."
+              /*Exception: Errors that disrupt the flow of code execution when the code is run. It means
+               "unexpected problems."
         Each exception contains an error message and information about the type of error.
 
         1- Exceptions are errors that disrupt the normal flow of code execution.
