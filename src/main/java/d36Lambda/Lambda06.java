@@ -11,7 +11,6 @@ public class Lambda06 { public static void main(String[] args) {
     System.out.println(nums); //[2, 2, 4, 5, 11, 10]
 
 
-
     //how to find maximum values in the list by using lambda expression
     findMaxiumValues(nums);
 
